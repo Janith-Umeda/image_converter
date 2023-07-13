@@ -1,0 +1,16 @@
+.UploadSection{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.UploadSection>input::after{
+  content: "";
+  width: 20px;
+  height: 10px;
+  color: aqua !important;
+  background-color: brown;
+}
