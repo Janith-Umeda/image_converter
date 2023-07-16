@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UploadCard from "./components/uploadCard";
-import SelectionCard from "./components/selectionCard";
+import NavBar from "./components/navBar";
 
 export default function App(){
   const [uploadData,setUploadData] = useState();
 
   return(
     <>
-      <UploadCard UploadData={setUploadData}/>
-      <SelectionCard fileType={uploadData?.file.type.split('/')[1]}/>
-      <div style={{textAlign:"center"}}>
-        <h4>Input</h4>
-        { uploadData?.blob? <img src={uploadData.blob} alt="" width="20%" /> : null }
+      <NavBar/>
+      <div className="container">
+        <UploadCard UploadData={setUploadData}/>
+        <div style={{textAlign:"center"}} className="shadow">
+          <h4>Input</h4>
+          { uploadData?.blob? <img src={uploadData.blob} alt="" width="20%" /> : null }
+        </div>
       </div>
     </>
   )
